@@ -76,7 +76,7 @@
                                     &kp LGUI    &trans  &kp SPACE      &kp RET        &trans  &kp NUMBER_0
             >;
 
-            label = "Num/Sym";
+            label = "Num";
         };
 
         layer_3 {
