@@ -75,6 +75,8 @@
 &kp LEFT_CONTROL    &trans  &trans    &trans    &trans     &trans    &kp UNDER  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PIPE  &kp TILDE
                                     &kp LGUI    &trans  &kp SPACE      &kp RET        &trans  &kp NUMBER_0
             >;
+
+            label = "Num/Sym";
         };
 
         layer_3 {
