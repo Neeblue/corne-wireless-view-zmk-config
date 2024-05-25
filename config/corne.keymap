@@ -13,8 +13,13 @@
         compatible = "zmk,combos";
 
         new_combo {
-            bindings = <&mo 3>;
+            bindings = <&mo 2>;
             key-positions = <37 40>;
+        };
+
+        jk-to-ctrlc {
+            bindings = <&kp LC(C)>;
+            key-positions = <28 27>;
         };
     };
 
@@ -41,11 +46,11 @@
 &kp ESCAPE  &kp SEMICOLON     &kp COMMA  &kp PERIOD    &kp P        &kp Y      &kp F          &kp G        &kp C      &kp R  &kp L  &kp DELETE
 &ShiftCaps  &kp A             &kp O      &kp E         &kp U        &kp I      &kp D          &kp H        &kp T      &kp N  &kp S  &kp MINUS
 &kp LCTRL   &kp SINGLE_QUOTE  &kp Q      &kp J         &kp K        &kp X      &kp B          &kp M        &kp W      &kp V  &kp Z  &kp SLASH
-                                         &kp LEFT_ALT  &lt 1 SPACE  &kp TAB    &kp BACKSPACE  &lt 2 SPACE  &kp ENTER
+                                         &kp LEFT_ALT  &lt 1 SPACE  &kp TAB    &kp BACKSPACE  &lt 1 SPACE  &kp ENTER
             >;
         };
 
-        lower_layer {
+        num {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -53,36 +58,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans     &trans  &trans  &trans    &trans  &trans       &trans         &trans              &trans        &trans        &trans        &kp DELETE
-&none      &none   &none   &none     &none   &none        &trans         &kp LEFT            &kp DOWN      &kp UP        &kp RIGHT     &trans
-&kp LSHFT  &trans  &trans  &trans    &trans  &trans       &trans         &kp LS(LEFT_BRACE)  &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(RBRC)  &trans
-                           &kp LGUI  &trans  &kp SPACE    &kp BACKSPACE  &trans              &kp NUMBER_0
+&trans    &trans  &trans  &trans    &trans  &trans       &trans         &trans              &trans        &trans        &trans        &kp DELETE
+&none     &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6         &kp N7              &kp N8        &kp N9        &kp N0        &trans
+&kp BSPC  &trans  &trans  &trans    &trans  &trans       &trans         &kp LS(LEFT_BRACE)  &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(RBRC)  &trans
+                          &kp LGUI  &trans  &kp SPACE    &kp BACKSPACE  &trans              &kp NUMBER_0
             >;
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        System {
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans        &trans
-&trans  &trans    &trans  &trans    &trans    &trans       &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans        &trans
-&trans  &trans    &trans  &trans    &trans    &trans       &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp QUESTION  &kp QUESTION
-                          &kp LGUI  &trans    &trans       &trans  &trans        &kp NUMBER_0
-            >;
-
-            label = "Num";
-        };
-
-        layer_3 {
-            bindings = <
-&trans      &trans        &trans        &trans  &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans
-&trans      &trans        &trans        &trans  &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans
-                                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans
+&trans      &trans        &trans        &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans
+                                        &trans        &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
